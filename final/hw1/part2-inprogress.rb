@@ -151,8 +151,8 @@ man_32 =
 	]
 ]
 
-#puts rps_game_winner(man_2).inspect
-#puts rps_tournament_winner(man_2).inspect
-#puts rps_tournament_winner(man_8).inspect
+puts rps_game_winner(man_2).inspect
+puts rps_tournament_winner(man_2).inspect
+puts rps_tournament_winner(man_8).inspect
 puts rps_tournament_winner(man_16).inspect
-#puts rps_tournament_winner(man_32).inspect
+puts rps_tournament_winner(man_32).inspect
