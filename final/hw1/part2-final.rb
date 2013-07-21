@@ -58,7 +58,7 @@ def rps_tournament_winner(tournament)
 	begin
 		result = []
 		while grouped_flatten.length > 1
-			first, second = grouped_flatten.pop(2)
+			first, second = grouped_flatten.shift(2)
 			result << rps_result(first, second)
 		end
 		grouped_flatten = result
