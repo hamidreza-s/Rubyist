@@ -61,22 +61,3 @@ def rps_tournament_winner(tournament)
 	
 	round_final = rps_game_winner(round_two)
 end
-
-game = [["Armando", "R"], ["Dave", "S"]]
-tournament = 
-[
-	[
-		[["Armando", "P"], ["Dave", "S"]],
-		[["Richard", "R"],  ["Michael", "S"]],
-	],
-	[
-		[["Allen", "S"], ["Omer", "P"]],
-		[["David E.", "R"], ["Richard X.", "P"]]
-	]
-]
-
-game_winner = rps_game_winner(game)
-tournament_winner = rps_tournament_winner(tournament)
-
-puts game_winner.inspect
-puts tournament_winner.inspect
