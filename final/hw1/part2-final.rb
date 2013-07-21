@@ -44,20 +44,24 @@ def rps_game_winner(game)
 end
 
 def rps_tournament_winner(tournament)
-	
-	round_one = []
-  tournament.each do |group|
-  	results = []
-  	group.each do |game|
-  		results << rps_game_winner(game)
-  	end
-  	round_one << results
-  end
-  
-  round_two = []
-	round_one.each do |game|
-		round_two << rps_game_winner(game)
+	temp_item = []
+	grouped_flatten = []
+	ungrouped_flatten = tournament.flatten	
+	ungrouped_flatten.each_with_index do |item,index|
+		temp_item << item
+		if index.odd?
+			grouped_flatten << temp_item
+			temp_item = []
+		end
 	end
 	
-	round_final = rps_game_winner(round_two)
+	begin
+		result = []
+		while grouped_flatten.length > 1
+			first, second = grouped_flatten.pop(2)
+			result << rps_result(first, second)
+		end
+		grouped_flatten = result
+	end while grouped_flatten.length > 1
+	grouped_flatten.first
 end
