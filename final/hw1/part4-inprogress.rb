@@ -1,24 +1,9 @@
 class Dessert
+	attr_accessor :name, :calories
   def initialize(name, calories)
 		@name = name
 		@calories = calories
   end
-  
-	def get_name
-		@name
-	end
-
-	def set_name(name)
-		@name = name
-	end
-
-	def get_calories
-		@calories
-	end
-
-	def set_calories(calories)
-		@calories = calories
-	end
 
   def healthy?
 		true if @calories < 200
@@ -30,6 +15,7 @@ class Dessert
 end
 
 class JellyBean < Dessert
+	attr_accessor :name, :calories, :flavor
   def initialize(name, calories, flavor)
 		@name = name
 		@calories = calories
@@ -43,14 +29,6 @@ class JellyBean < Dessert
 			return true
 		end
   end
-
-	def get_flavor
-		@flavor
-	end
-	
-	def set_flavor(flavor)
-		@flavor = flavor
-	end
 end
 
 my_dessert = Dessert.new('Mast', 199)
